@@ -1,15 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ølspecialisten.Core.DomainServices;
+using Ølspecialisten.Core.Entity;
 
 namespace Ølspecialisten.Infrastructure.Data.Repositories
 {
-    class BeerRepository
+    public class BeerRepository : IBeerRepository
     {
-        List<Beer> GetAllBeers();
-        void CreateBeer(Beer beer);
-        void DeleteBeer(int id);
-        void UpdateBeer(Beer beer);
-        List<Beer> GetBeersByType(Beer.TypeØl type);
+        public List<Beer> GetAllBeers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateBeer(Beer beer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteBeer(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateBeer(Beer beer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Beer> GetBeersByType(Beer.TypeØl type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

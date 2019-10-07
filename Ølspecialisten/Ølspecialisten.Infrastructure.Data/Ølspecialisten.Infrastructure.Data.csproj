@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ølspecialisten.Core.Entity\Ølspecialisten.Core.Entity.csproj" />
+    <ProjectReference Include="..\Ølspecialisten.Core\Ølspecialisten.Core.csproj" />
   </ItemGroup>
 
 </Project>
