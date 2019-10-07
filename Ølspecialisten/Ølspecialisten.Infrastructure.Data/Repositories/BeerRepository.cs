@@ -35,7 +35,7 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Beer> GetBeersByType(Beer.TypeØl type)
+        public List<Beer> GetBeersByType(Beer.TypeBeer type)
         {
             throw new NotImplementedException();
         }

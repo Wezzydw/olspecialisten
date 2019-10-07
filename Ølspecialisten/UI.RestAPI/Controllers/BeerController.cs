@@ -24,8 +24,13 @@ namespace UI.RestAPI.Controllers
         [HttpGet]
             public ActionResult<IEnumerable<Beer>> Get()
             {
-                return _beerService.GetAllBeers();
-            }
+                //return new string[] { "value1", "value2" };
+            /*Beer b = new Beer() { Navn = "arwdwa" };
+            List<Beer> t = new List<Beer>();
+            t.Add(b);
+            return t;*/
+            return _beerService.GetAllBeers();
+        }
 
             // GET api/values/5
             [HttpGet("{id}")]

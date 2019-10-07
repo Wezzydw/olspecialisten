@@ -35,7 +35,7 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
            _beerRepository.UpdateBeer(beer);
         }
 
-        public List<Beer> GetBeersByType(Beer.TypeØl type)
+        public List<Beer> GetBeersByType(Beer.TypeBeer type)
         {
             return _beerRepository.GetBeersByType(type);
         }

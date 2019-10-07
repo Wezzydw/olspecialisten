@@ -12,7 +12,7 @@ namespace Ølspecialisten.Core.ApplicationServices
         void CreateBeer(Beer beer);
         void DeleteBeer(int id);
         void UpdateBeer(Beer beer);
-        List<Beer> GetBeersByType(Beer.TypeØl type);
+        List<Beer> GetBeersByType(Beer.TypeBeer type);
 
     }
 }

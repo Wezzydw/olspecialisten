@@ -15,7 +15,7 @@ namespace Ølspecialisten.Core.Entity
         public string BeskrivelseLang { get; set; }
         public double Alkohol { get; set; }
         public double Kapacitet { get; set; }
-        public TypeØl Type { get; set; }
+        public TypeBeer TypeOfBeer { get; set; }
 
         public enum Nationalitet
         {
@@ -24,7 +24,7 @@ namespace Ølspecialisten.Core.Entity
             Svensk
         }
 
-        public enum TypeØl
+        public enum TypeBeer
         {
             Lys,
             Mørk
