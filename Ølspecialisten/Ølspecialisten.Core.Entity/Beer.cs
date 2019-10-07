@@ -6,7 +6,7 @@ namespace Ølspecialisten.Core.Entity
 {
    public class Beer
     {
-
+        public int Id { get; set; }
         public double Pris { get; set; }
         public string Beskrivelse { get; set; }
         public Nationalitet Nation { get; set; }
@@ -15,6 +15,7 @@ namespace Ølspecialisten.Core.Entity
         public string BeskrivelseLang { get; set; }
         public double Alkohol { get; set; }
         public double Kapacitet { get; set; }
+        public TypeØl Type { get; set; }
 
         public enum Nationalitet
         {

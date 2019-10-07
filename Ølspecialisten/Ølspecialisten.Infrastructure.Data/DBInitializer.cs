@@ -28,8 +28,16 @@ namespace Ølspecialisten.Infrastructure.Data
 
             List<Beer> items = new List<Beer>
             {
-                new Beer { Navn = "bEdste øl"},
-                new Beer { Navn = "Samte fin"}
+                new Beer { Navn = "bEdste øl", Alkohol = 12, Beskrivelse = "Lys øl brygget på malt fra Amager strand",
+                    BeskrivelseLang = "Denne fine danske øl er brygget under den varme sommerhimmel, hvorefter den har hygget sig i et skur med de fineste humlebier",
+                    Kapacitet = 500, Lager = 100,
+                    Nation = Beer.Nationalitet.Dansk,
+                    Pris = 80, Type = Beer.TypeØl.Lys
+                },
+                new Beer { Navn = "Samte fin", Type = Beer.TypeØl.Mørk, Alkohol = 1, Beskrivelse = "mørk øl brygget på malt fra Esbjerg strand",
+                    BeskrivelseLang = "Denne fine danske øl er brygget under den lunke skude, hvorefter den har hygget sig i et skur med de fineste fisk",
+                    Pris = 450, Nation = Beer.Nationalitet.Dansk, Lager = 2, Kapacitet = 1000
+                }
             };
 
             context.Beers.AddRange(items);

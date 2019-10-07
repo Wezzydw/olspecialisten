@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Ølspecialisten.Core.ApplicationServices;
+using Ølspecialisten.Core.Entity;
 
 namespace UI.RestAPI.Controllers
 {
@@ -11,11 +13,18 @@ namespace UI.RestAPI.Controllers
         [ApiController]
         public class BeerController : ControllerBase
         {
-            // GET api/values
-            [HttpGet]
-            public ActionResult<IEnumerable<string>> Get()
+
+            private IBeerService _beerService;
+
+            public BeerController(IBeerService beerService)
             {
-                return new string[] { "value1", "value2" };
+                _beerService = beerService;
+            }
+        // GET api/values
+        [HttpGet]
+            public ActionResult<IEnumerable<Beer>> Get()
+            {
+                return _beerService.GetAllBeers();
             }
 
             // GET api/values/5
