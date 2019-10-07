@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Ølspecialisten.Core.DomainServices;
 using Ølspecialisten.Core.Entity;
@@ -16,7 +17,7 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
 
         public List<Beer> GetAllBeers()
         {
-            throw new NotImplementedException();
+            return _beerContext.Beers.ToList();
         }
 
         public void CreateBeer(Beer beer)
