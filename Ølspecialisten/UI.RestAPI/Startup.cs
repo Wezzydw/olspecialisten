@@ -48,6 +48,15 @@ namespace UI.RestAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                // Initialize the database
+                var services = scope.ServiceProvider;
+                var dbContext = services.GetService<BeerContext>();
+                var dbInitializer = services.GetService<DBInitializer>();
+                dbInitializer.Initialize(dbContext);
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
