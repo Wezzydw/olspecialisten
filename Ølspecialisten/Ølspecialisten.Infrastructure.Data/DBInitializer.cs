@@ -7,7 +7,7 @@ using Ølspecialisten.Core.Entity;
 
 namespace Ølspecialisten.Infrastructure.Data
 {
-    public class DBInitializer
+    public class DBInitializer : IDBInitializer
     {
 
         // This method will create and seed the database.
@@ -22,7 +22,7 @@ namespace Ølspecialisten.Infrastructure.Data
             if (context.Beers.Any())
             {
                 // Delete and re-create the database, if it was already been created.
-                context.Database.ExecuteSqlCommand("DROP TABLE TodoItems");
+                context.Database.ExecuteSqlCommand("DROP TABLE Beers");
                 context.Database.EnsureCreated();
             }
 

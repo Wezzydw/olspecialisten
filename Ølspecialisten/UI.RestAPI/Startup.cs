@@ -54,7 +54,7 @@ namespace UI.RestAPI
                 // Initialize the database
                 var services = scope.ServiceProvider;
                 var dbContext = services.GetService<BeerContext>();
-                var dbInitializer = services.GetService<DBInitializer>();
+                var dbInitializer = services.GetService<IDBInitializer>();
                 dbInitializer.Initialize(dbContext);
             }
             if (env.IsDevelopment())

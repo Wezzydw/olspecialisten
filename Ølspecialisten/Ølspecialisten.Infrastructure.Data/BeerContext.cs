@@ -8,9 +8,7 @@ namespace Ølspecialisten.Infrastructure.Data
 {
     public class BeerContext : DbContext
     {
-        public  BeerContext(DbContextOptions opt) :  base
-
-        (opt)
+        public  BeerContext(DbContextOptions opt) :  base(opt)
         {
         }
 
