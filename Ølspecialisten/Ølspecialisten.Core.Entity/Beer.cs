@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Ølspecialisten.Core.Entity
 {
-    public class Class1
+    class Beer
     {
     }
 }
