@@ -22,12 +22,14 @@ namespace UI.RestAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration,IHostingEnvironment env)
         {
             Configuration = configuration;
+            this.env = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment env { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -35,14 +37,23 @@ namespace UI.RestAPI
 
             services.AddCors();
 
+            if (env.IsDevelopment())
+            {
+                // In-memory database:
+                services.AddDbContext<BeerContext>(opt => opt.UseInMemoryDatabase("Beershop"));
+            }
+            else
+            {
+                // Azure SQL database:
+                services.AddDbContext<BeerContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
+
             services.AddScoped<IBeerRepository, BeerRepository>();
             services.AddScoped<IBeerService, BeerService>();
-      
+            services.AddTransient<IDBInitializer, DBInitializer>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-           
-            services.AddDbContext<BeerContext>(opt =>
-              opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +68,8 @@ namespace UI.RestAPI
                 var dbInitializer = services.GetService<IDBInitializer>();
                 dbInitializer.Initialize(dbContext);
             }
+
+            app.UseDeveloperExceptionPage();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -66,7 +79,7 @@ namespace UI.RestAPI
                 app.UseHsts();
             }
 
-            app.UseDeveloperExceptionPage();
+            
             app.UseHttpsRedirection();
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
