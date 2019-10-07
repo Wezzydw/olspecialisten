@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ølspecialisten.Infrastructure.Data
 {
-    class BeerContext
+    public class BeerContext
     {
     }
 }

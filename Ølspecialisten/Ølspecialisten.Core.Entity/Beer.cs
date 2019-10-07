@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ølspecialisten.Core.Entity
 {
-    class Beer
+   public class Beer
     {
 
         public double Pris { get; set; }

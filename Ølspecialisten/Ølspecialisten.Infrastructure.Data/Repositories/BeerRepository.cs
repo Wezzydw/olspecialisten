@@ -8,6 +8,12 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
 {
     public class BeerRepository : IBeerRepository
     {
+        private BeerContext _beerContext;
+        public BeerRepository(BeerContext context)
+        {
+            _beerContext = context;
+        }
+
         public List<Beer> GetAllBeers()
         {
             throw new NotImplementedException();
