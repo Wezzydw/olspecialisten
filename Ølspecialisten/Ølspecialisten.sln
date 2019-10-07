@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ølspecialisten", "Ølspecialisten\Ølspecialisten.csproj", "{0ADE0A67-2AEE-4F0A-AA8C-796D6B83AB00}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2A67725F-0AAF-4821-A7FB-D04C00F292D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Entity", "Core.Entity", "{BBEBD1DF-7013-4718-B059-EE0B1E7F44D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Data", "Infrastructure.Data", "{146D678E-F05D-4172-AC4F-C41517E506D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{7038F770-2E7C-4503-BC6B-6DB949A04EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ølspecialisten.Core", "Ølspecialisten.Core\Ølspecialisten.Core.csproj", "{2D2F43BE-61E2-4E96-A274-B65B47EC7446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ølspecialisten.Core.Entity", "Ølspecialisten.Core.Entity\Ølspecialisten.Core.Entity.csproj", "{F68B1667-62CE-4D83-88F1-E32FDA40B6A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ølspecialisten.Infrastructure.Data", "Ølspecialisten.Infrastructure.Data\Ølspecialisten.Infrastructure.Data.csproj", "{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.RestAPI", "UI.RestAPI\UI.RestAPI.csproj", "{60FA7A30-7623-471D-9D29-547D715EBAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +25,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ADE0A67-2AEE-4F0A-AA8C-796D6B83AB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ADE0A67-2AEE-4F0A-AA8C-796D6B83AB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ADE0A67-2AEE-4F0A-AA8C-796D6B83AB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ADE0A67-2AEE-4F0A-AA8C-796D6B83AB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2F43BE-61E2-4E96-A274-B65B47EC7446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2F43BE-61E2-4E96-A274-B65B47EC7446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2F43BE-61E2-4E96-A274-B65B47EC7446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2F43BE-61E2-4E96-A274-B65B47EC7446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68B1667-62CE-4D83-88F1-E32FDA40B6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68B1667-62CE-4D83-88F1-E32FDA40B6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68B1667-62CE-4D83-88F1-E32FDA40B6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68B1667-62CE-4D83-88F1-E32FDA40B6A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60FA7A30-7623-471D-9D29-547D715EBAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FA7A30-7623-471D-9D29-547D715EBAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FA7A30-7623-471D-9D29-547D715EBAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FA7A30-7623-471D-9D29-547D715EBAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D2F43BE-61E2-4E96-A274-B65B47EC7446} = {2A67725F-0AAF-4821-A7FB-D04C00F292D1}
+		{F68B1667-62CE-4D83-88F1-E32FDA40B6A1} = {BBEBD1DF-7013-4718-B059-EE0B1E7F44D9}
+		{48FD39E6-76BC-4B4A-97E7-5FFEAF514D5D} = {146D678E-F05D-4172-AC4F-C41517E506D5}
+		{60FA7A30-7623-471D-9D29-547D715EBAD8} = {7038F770-2E7C-4503-BC6B-6DB949A04EE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AA70235-199E-4400-B2EF-010E26E8361A}
