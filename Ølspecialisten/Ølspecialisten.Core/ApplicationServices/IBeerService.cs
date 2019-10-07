@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Ølspecialisten.Core.ApplicationServices
 {
-    interface IBeerService
+    public interface IBeerService
     {
+
+        List<Beer>
     }
 }
