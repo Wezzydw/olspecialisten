@@ -16,5 +16,13 @@ namespace Ølspecialisten.Infrastructure.Data
             return ms.ToArray();
         }
 
+
+        public static string ImageToBase64(string filepath)
+        {
+            return Convert.ToBase64String(File.ReadAllBytes(filepath));
+        }
+
     }
+
+
 }
