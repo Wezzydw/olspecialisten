@@ -28,11 +28,11 @@ namespace UI.RestAPI.Controllers
             }
 
             // GET api/values/5//andreas syntes den skulle hedde solskin
-            [HttpGet]
+            /*[HttpGet]
             public ActionResult<string> Solskin([FromQuery] string type)
             {
                 return "value";
-            }
+            }*/
 
             // POST api/values
             [HttpPost]
