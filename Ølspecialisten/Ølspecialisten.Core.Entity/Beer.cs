@@ -16,6 +16,7 @@ namespace Ølspecialisten.Core.Entity
         public double Alkohol { get; set; }
         public double Kapacitet { get; set; }
         public TypeBeer TypeOfBeer { get; set; }
+        public string Titel { get; set; }
 
         public enum Nationalitet
         {
