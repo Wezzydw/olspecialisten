@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
 
 namespace Ølspecialisten.Core.Entity
@@ -18,8 +17,7 @@ namespace Ølspecialisten.Core.Entity
         public double Kapacitet { get; set; }
         public TypeBeer TypeOfBeer { get; set; }
         public string Titel { get; set; }
-        public byte[] Image { get; set; }
-        
+
         public enum Nationalitet
         {
             Dansk,
