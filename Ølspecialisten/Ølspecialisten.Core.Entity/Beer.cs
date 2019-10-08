@@ -18,6 +18,13 @@ namespace Ølspecialisten.Core.Entity
         public TypeBeer TypeOfBeer { get; set; }
         public string Titel { get; set; }
 
+
+
+        public byte[] Image { get; set; }
+
+        public string Image64 { get; set; }
+        
+
         public enum Nationalitet
         {
             Dansk,

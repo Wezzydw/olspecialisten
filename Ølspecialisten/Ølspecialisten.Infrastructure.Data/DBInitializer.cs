@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -14,7 +15,7 @@ namespace Ølspecialisten.Infrastructure.Data
         // This method will create and seed the database.
         public void Initialize(BeerContext context)
         {
-            context.Database.ExecuteSqlCommand("DROP TABLE Beers");
+            //context.Database.ExecuteSqlCommand("DROP TABLE Beers");
             // Create the database, if it does not already exists. If the database
             // already exists, no action is taken (and no effort is made to ensure it
             // is compatible with the model for this context).
@@ -36,7 +37,7 @@ namespace Ølspecialisten.Infrastructure.Data
                     BeskrivelseLang = "Pollerup Påskebryg er en ordentlig flaske øl på 2 liter, som passer godt på påskebordet, hvis der skal skabes lidt ekstra opmærksomhed. Inden i flasken finder du en solid classic, altså en pilsnertype, med ekstra karamelmalt, der giver fylde og sødme.",
                     Kapacitet = 200, Lager = 100,
                     Nation = Beer.Nationalitet.Dansk,
-                    Pris = 80, TypeOfBeer = Beer.TypeBeer.Lys, Titel = "Pollerup Påskebryg"
+                    Pris = 80, TypeOfBeer = Beer.TypeBeer.Lys, Titel = "Pollerup Påskebryg", Image64 = ImgBin.ImageToBase64((@"background.png"))
                 },
                 new Beer { Navn = "Fanø Three Graces", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 8.6, Beskrivelse = "Three Graces stammer fra Fanø Bryghus, som er et af de mere oversete bryggerier i Danmark.",
                     BeskrivelseLang = "Den gode maltbund giver Three Graces en forholdvis sødlig smagsprofil, med noter af karamel, muscovado- og rørsukker. Men der er også frugtig sødme som af moden fersken.",
@@ -78,7 +79,7 @@ namespace Ølspecialisten.Infrastructure.Data
                 }
 
             };
-            
+            //Image = ImgBin.ImageToBytes(Image.FromFile("C:\\Users\\Wezzy Laptop\\Desktop\\background.png"))
             context.Beers.AddRange(items);
             context.SaveChanges();
         }
