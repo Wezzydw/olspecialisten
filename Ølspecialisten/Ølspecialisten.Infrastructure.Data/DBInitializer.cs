@@ -30,18 +30,54 @@ namespace Ølspecialisten.Infrastructure.Data
             }
 
             List<Beer> items = new List<Beer>
+
+                //Danske øl
             {
-                new Beer { Navn = "bEdste øl", Alkohol = 12, Beskrivelse = "Lys øl brygget på malt fra Amager strand",
-                    BeskrivelseLang = "Denne fine danske øl er brygget under den varme sommerhimmel, hvorefter den har hygget sig i et skur med de fineste humlebier",
-                    Kapacitet = 500, Lager = 100,
+                new Beer { Navn = "Pollerup Påskebryg", Alkohol = 5.7, Beskrivelse = "Pollerup Påskebryg stammer fra Bryghuset Møn",
+                    BeskrivelseLang = "Pollerup Påskebryg er en ordentlig flaske øl på 2 liter, som passer godt på påskebordet, hvis der skal skabes lidt ekstra opmærksomhed. Inden i flasken finder du en solid classic, altså en pilsnertype, med ekstra karamelmalt, der giver fylde og sødme.",
+                    Kapacitet = 200, Lager = 100,
                     Nation = Beer.Nationalitet.Dansk,
-                    Pris = 80, TypeOfBeer = Beer.TypeBeer.Lys, Titel = "Fin titel", Image64 = ImgBin.ImageToBase64((@"background.png"))
+                    Pris = 80, TypeOfBeer = Beer.TypeBeer.Lys, Titel = "Pollerup Påskebryg", Image64 = ImgBin.ImageToBase64((@"background.png"))
                 },
-                new Beer { Navn = "Samte fin", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 1, Beskrivelse = "mørk øl brygget på malt fra Esbjerg strand",
-                    BeskrivelseLang = "Denne fine danske øl er brygget under den lunke skude, hvorefter den har hygget sig i et skur med de fineste fisk",
-                    Pris = 450, Nation = Beer.Nationalitet.Dansk, Lager = 2, Kapacitet = 1000, Titel = "Det er sgu da fint"
+                new Beer { Navn = "Fanø Three Graces", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 8.6, Beskrivelse = "Three Graces stammer fra Fanø Bryghus, som er et af de mere oversete bryggerier i Danmark.",
+                    BeskrivelseLang = "Den gode maltbund giver Three Graces en forholdvis sødlig smagsprofil, med noter af karamel, muscovado- og rørsukker. Men der er også frugtig sødme som af moden fersken.",
+                    Pris = 150, Nation = Beer.Nationalitet.Dansk, Lager = 2, Kapacitet = 50, Titel = "Fanø Three Graces"
+                },
+                new Beer { Navn = "Sorte Får", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 8.5, Beskrivelse = "Sorte Får fra Refsvindinge, er en mørk sødlig og maltdomineret påskeøl.",
+                    BeskrivelseLang = "Den smager ikke så stærk som den er, en rigtig 'nydeøl'.",
+                    Pris = 110, Nation = Beer.Nationalitet.Dansk, Lager = 17, Kapacitet = 33, Titel = "Sorte Får"
+                },
+
+                //Norske øl
+
+                new Beer { Navn = "Lervig/Boxing Cat, Norwegian Mauler", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 7.9, Beskrivelse = "Brygget af Larvig Aktiebryggeri i Stavanger",
+                    BeskrivelseLang = "Denne øl er meget balanceret med en smulig dominans af sødme. Der findes strejf af mørk chokolade og ristet malm.",
+                    Pris = 190, Nation = Beer.Nationalitet.Norsk, Lager = 9, Kapacitet = 33, Titel = "Lervig/Boxing Cat, Norwegian Mauler"
+                },
+                new Beer { Navn = "Beer Here, Winter Storm", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 10.5, Beskrivelse = "Brygget af Nøgne Ø (Hansa Borg)",
+                    BeskrivelseLang = "Smagen er ristet malt samt små hints af chokolade, kaffe, lakrids.",
+                    Pris = 210, Nation = Beer.Nationalitet.Norsk, Lager = 1, Kapacitet = 33, Titel = "Beer Here, Winter Storm"
+                },
+                new Beer { Navn = "Mallow Mafia", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 12, Beskrivelse = "Brygget af BrewDog vs. Amundsen.",
+                    BeskrivelseLang = "En øl der vil kunne køle dig ned på en varm juni dag.",
+                    Pris = 90, Nation = Beer.Nationalitet.Norsk, Lager = 10, Kapacitet = 33, Titel = "Mallow Mafia"
+                },
+
+                //Svenske øl
+
+                new Beer { Navn = "Omnipollo", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 11, Beskrivelse = "Brygget af Dugges Bryggeri.",
+                    BeskrivelseLang = "En øl der bruger mørk chokolade som hovedemnet, som er fantastisk til deserter.",
+                    Pris = 80, Nation = Beer.Nationalitet.Svensk, Lager = 18, Kapacitet = 33, Titel = "Omnipollo"
+                },
+                new Beer { Navn = "Wheat Wine", TypeOfBeer = Beer.TypeBeer.Lys, Alkohol = 9.1, Beskrivelse = "Brygget af Beerbliotek i Gøteborg.",
+                    BeskrivelseLang = "En stærk ale, der virkelig giver en smag af hvad Sverige står for.",
+                    Pris = 119, Nation = Beer.Nationalitet.Svensk, Lager = 57, Kapacitet = 33, Titel = "Wheat Wine"
+                },
+                 new Beer { Navn = "Infix Vanilla", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 10.5, Beskrivelse = "Brygget af Nerdbrewing fra Malmø, som kalder sig selv for en sigøjner bryggeri.",
+                    BeskrivelseLang = "En flot og smagsfyld øl, som har en mild form for vanillie macchiato smag. Virkelig værd at smage!",
+                    Pris = 200, Nation = Beer.Nationalitet.Svensk, Lager = 14, Kapacitet = 33, Titel = "Infix Vanilla"
                 }
-                //new Beer(){Navn = "Tester"}
+
             };
             //Image = ImgBin.ImageToBytes(Image.FromFile("C:\\Users\\Wezzy Laptop\\Desktop\\background.png"))
             context.Beers.AddRange(items);
