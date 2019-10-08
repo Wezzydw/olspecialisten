@@ -37,7 +37,7 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
 
         public List<Beer> GetBeersByType(Beer.TypeBeer type)
         {
-            throw new NotImplementedException();
+            return _beerContext.Beers.Where(b => b.TypeOfBeer.Equals(type)).ToList();
         }
     }
 }

@@ -35,9 +35,17 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
            _beerRepository.UpdateBeer(beer);
         }
 
-        public List<Beer> GetBeersByType(Beer.TypeBeer type)
+        public List<Beer> GetBeersByType(string type)
         {
-            return _beerRepository.GetBeersByType(type);
+            Beer.TypeBeer t = Beer.TypeBeer.Lys;
+            foreach (Beer.TypeBeer beertype in Enum.GetValues(typeof(Beer.TypeBeer)))
+            {
+                if(beertype.ToString().Equals(type))
+                {
+                    t = beertype;
+                }
+            }
+            return _beerRepository.GetBeersByType(t);
         }
     }
 }

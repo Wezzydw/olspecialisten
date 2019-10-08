@@ -20,21 +20,16 @@ namespace UI.RestAPI.Controllers
             {
                 _beerService = beerService;
             }
-        // GET api/values
-        [HttpGet]
+            // GET api/values
+            [HttpGet]
             public ActionResult<IEnumerable<Beer>> Get()
             {
-                //return new string[] { "value1", "value2" };
-            /*Beer b = new Beer() { Navn = "arwdwa" };
-            List<Beer> t = new List<Beer>();
-            t.Add(b);
-            return t;*/
-            return _beerService.GetAllBeers();
-        }
+                return _beerService.GetAllBeers();
+            }
 
-            // GET api/values/5
-            [HttpGet("{id}")]
-            public ActionResult<string> Get(int id)
+            // GET api/values/5//andreas syntes den skulle hedde solskin
+            [HttpGet]
+            public ActionResult<string> Solskin([FromQuery] string type)
             {
                 return "value";
             }
