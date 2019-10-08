@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -77,7 +78,7 @@ namespace Ølspecialisten.Infrastructure.Data
                 }
 
             };
-
+            
             context.Beers.AddRange(items);
             context.SaveChanges();
         }
