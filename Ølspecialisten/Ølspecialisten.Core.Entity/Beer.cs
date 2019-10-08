@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
 
 namespace Ølspecialisten.Core.Entity
@@ -20,6 +19,7 @@ namespace Ølspecialisten.Core.Entity
         public string Titel { get; set; }
         public string Image64 { get; set; }
         
+
         public enum Nationalitet
         {
             Dansk,
