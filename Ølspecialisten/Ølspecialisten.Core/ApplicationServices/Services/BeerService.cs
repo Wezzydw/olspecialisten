@@ -47,5 +47,10 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
             }
             return _beerRepository.GetBeersByType(t);
         }
+
+        public Beer GetBeerById(int id)
+        {
+            return _beerRepository.GetBeerById(id);
+        }
     }
 }

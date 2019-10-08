@@ -39,5 +39,10 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
         {
             return _beerContext.Beers.Where(b => b.TypeOfBeer.Equals(type)).ToList();
         }
+
+        public Beer GetBeerById(int id)
+        {
+           return _beerContext.Beers.FirstOrDefault(i => i.Id == id);
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace Ølspecialisten.Core.ApplicationServices
         void UpdateBeer(Beer beer);
         List<Beer> GetBeersByType(string type);
 
+        Beer GetBeerById(int id);
     }
 }
