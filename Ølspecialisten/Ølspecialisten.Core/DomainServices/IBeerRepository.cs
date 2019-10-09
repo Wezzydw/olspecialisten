@@ -7,7 +7,7 @@ namespace Ølspecialisten.Core.DomainServices
 {
    public interface IBeerRepository
     {
-        List<Beer> GetAllBeers();
+        List<Beer> GetAllBeers(Filter filter);
         Beer CreateBeer(Beer beer);
         Beer DeleteBeer(int id);
         Beer UpdateBeer(Beer beer);

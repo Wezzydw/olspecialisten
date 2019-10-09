@@ -18,7 +18,8 @@ namespace Ølspecialisten.Core.Entity
         public TypeBeer TypeOfBeer { get; set; }
         public string Titel { get; set; }
         public string Image64 { get; set; }
-        
+        public int Popu { get; set; }
+
 
         public enum Nationalitet
         {

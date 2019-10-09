@@ -8,7 +8,7 @@ namespace Ølspecialisten.Core.ApplicationServices
     public interface IBeerService
     {
 
-        List<Beer> GetAllBeers();
+        List<Beer> GetAllBeers(Filter filter);
         void CreateBeer(Beer beer);
         void DeleteBeer(int id);
         void UpdateBeer(Beer beer);

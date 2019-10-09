@@ -16,9 +16,23 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
             _beerContext = context;
         }
 
-        public List<Beer> GetAllBeers()
+        public List<Beer> GetAllBeers(Filter filter)
         {
-            return _beerContext.Beers.ToList();
+            IEnumerable<Beer> list = new List<Beer>();
+            list = _beerContext.Beers;
+
+            if (filter != null && filter.Land >= 0 &&
+                Enum.GetValues(typeof(Beer.Nationalitet)).Length < (int) filter.Land)
+            {
+               list = list.Where(f => f.Nation.Equals(filter.Land));
+            }
+
+            /*if(list.ToList().Count.Equals(0))
+            {
+                list = _beerContext.Beers.ToList();
+            }*/
+            return list.ToList();
+            //return _beerContext.Beers.ToList();
         }
 
         public Beer CreateBeer(Beer beer)

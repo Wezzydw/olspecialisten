@@ -22,9 +22,9 @@ namespace UI.RestAPI.Controllers
             }
             // GET api/values
             [HttpGet]
-            public ActionResult<IEnumerable<Beer>> Get([FromQuery] String filter)
+            public ActionResult<IEnumerable<Beer>> Get([FromQuery] Filter filter)
             {
-                return _beerService.GetAllBeers();
+                return _beerService.GetAllBeers(filter);
             }
 
             // GET api/values/5//andreas syntes den skulle hedde solskin
