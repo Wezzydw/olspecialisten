@@ -31,6 +31,7 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
         public Beer DeleteBeer(int id)
         {
             var beerRemove = _beerContext.Remove(new Beer() { Id = id }).Entity;
+            _beerContext.SaveChanges();
             return beerRemove;
         }
 
