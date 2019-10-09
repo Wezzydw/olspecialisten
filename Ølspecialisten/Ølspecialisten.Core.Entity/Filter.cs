@@ -8,7 +8,7 @@ namespace Ølspecialisten.Core.Entity
     {
         public Beer.TypeBeer Type { get; set; }
         public Beer.Nationalitet Land { get; set; }
-        public Selector Selcect { get; set; }
+        public Selector Select { get; set; }
 
         public enum Selector
         {

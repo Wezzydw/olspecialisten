@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Converters;
 using Ølspecialisten.Core.ApplicationServices;
 using Ølspecialisten.Core.ApplicationServices.Services;
 using Ølspecialisten.Core.DomainServices;
@@ -52,6 +53,10 @@ namespace UI.RestAPI
             services.AddScoped<IBeerRepository, BeerRepository>();
             services.AddScoped<IBeerService, BeerService>();
             services.AddTransient<IDBInitializer, DBInitializer>();
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings.Converters.Add(new StringEnumConverter());
+            });
+           
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
         }

@@ -18,19 +18,40 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
 
         public List<Beer> GetAllBeers(Filter filter)
         {
-            IEnumerable<Beer> list = new List<Beer>();
-            list = _beerContext.Beers;
+            IEnumerable<Beer> list = _beerContext.Beers;
 
-            if (filter != null && filter.Land >= 0 &&
-                Enum.GetValues(typeof(Beer.Nationalitet)).Length < (int) filter.Land)
+
+            /*if (filter.Land >= 0 &&
+                Enum.GetValues(typeof(Beer.Nationalitet)).Length > (int) filter.Land)
             {
-               list = list.Where(f => f.Nation.Equals(filter.Land));
+               list = _beerContext.Beers.Where(f => (int)f.Nation ==(filter.Land));
+            }*/
+
+            /*if ((int)filter.Type > 0 &&
+                Enum.GetValues(typeof(Beer.TypeBeer)).Length >= (int)filter.Type)
+            {
+                list = _beerContext.Beers.Where(f => f.TypeOfBeer.Equals(filter.Type-1));
+            }*/
+
+
+
+            /*if (filter.Land.ToString().Length == 0)
+            {
+                list = list.Where(f => f.Nation.ToString() ==(filter.Land.ToString()));
             }
 
-            /*if(list.ToList().Count.Equals(0))
+            if (filter.Type != 0)
             {
-                list = _beerContext.Beers.ToList();
+                list = list.Where(f => f.TypeOfBeer.Equals(filter.Type));
             }*/
+
+            /*if ((int)filter.Type > 0 &&
+                Enum.GetValues(typeof(Beer.TypeBeer)).Length >= (int)filter.Type)
+            {
+                list= list.Where(f => (int)f.TypeOfBeer == (int)filter.Type - 1);
+            }*/
+
+
             return list.ToList();
             //return _beerContext.Beers.ToList();
         }

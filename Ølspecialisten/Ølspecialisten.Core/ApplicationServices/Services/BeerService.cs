@@ -15,7 +15,7 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
         {
             _beerRepository = beerRepository;
         }
-        public List<Beer> GetAllBeers(Filter filter = null)
+        public List<Beer> GetAllBeers(Filter filter)
         {
 
 

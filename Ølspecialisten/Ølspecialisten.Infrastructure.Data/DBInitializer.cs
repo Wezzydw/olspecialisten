@@ -36,7 +36,7 @@ namespace Ølspecialisten.Infrastructure.Data
                 new Beer { Navn = "Pollerup Påskebryg", Alkohol = 5.7, Beskrivelse = "Pollerup Påskebryg stammer fra Bryghuset Møn",
                     BeskrivelseLang = "Pollerup Påskebryg er en ordentlig flaske øl på 2 liter, som passer godt på påskebordet, hvis der skal skabes lidt ekstra opmærksomhed. Inden i flasken finder du en solid classic, altså en pilsnertype, med ekstra karamelmalt, der giver fylde og sødme.",
                     Kapacitet = 200, Lager = 100,
-                    Nation = Beer.Nationalitet.Dansk,
+                    Nation = Beer.Nationalitet.dansk,
                     Pris = 80, TypeOfBeer = Beer.TypeBeer.Lys, Titel = "Pollerup Påskebryg", Image64 = "https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570534937/pollerup-paaskebryg-fit-770x770x75_panyda.jpg"
 
                 }
@@ -45,11 +45,11 @@ namespace Ølspecialisten.Infrastructure.Data
 
                 new Beer { Navn = "Fanø Three Graces", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 8.6, Beskrivelse = "Three Graces stammer fra Fanø Bryghus, som er et af de mere oversete bryggerier i Danmark.",
                     BeskrivelseLang = "Den gode maltbund giver Three Graces en forholdvis sødlig smagsprofil, med noter af karamel, muscovado- og rørsukker. Men der er også frugtig sødme som af moden fersken.",
-                    Pris = 150, Nation = Beer.Nationalitet.Dansk, Lager = 2, Kapacitet = 50, Titel = "Fanø Three Graces", Image64 = "https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570534895/fanoe-three-graces-fit-770x770x75_njqsau.jpg"
+                    Pris = 150, Nation = Beer.Nationalitet.dansk, Lager = 2, Kapacitet = 50, Titel = "Fanø Three Graces", Image64 = "https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570534895/fanoe-three-graces-fit-770x770x75_njqsau.jpg"
                 },
                 new Beer { Navn = "Sorte Får", TypeOfBeer = Beer.TypeBeer.Mørk, Alkohol = 8.5, Beskrivelse = "Sorte Får fra Refsvindinge, er en mørk sødlig og maltdomineret påskeøl.",
                     BeskrivelseLang = "Den smager ikke så stærk som den er, en rigtig 'nydeøl'.",
-                    Pris = 110, Nation = Beer.Nationalitet.Dansk, Lager = 17, Kapacitet = 33, Titel = "Sorte Får", Image64 = "https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570533046/sorte-faar-refsvindinge-fit-770x770x75_gwonz4.jpg"
+                    Pris = 110, Nation = Beer.Nationalitet.dansk, Lager = 17, Kapacitet = 33, Titel = "Sorte Får", Image64 = "https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570533046/sorte-faar-refsvindinge-fit-770x770x75_gwonz4.jpg"
                 },
 
                 //Norske øl

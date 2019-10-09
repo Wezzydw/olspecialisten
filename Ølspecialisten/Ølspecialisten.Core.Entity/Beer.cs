@@ -23,7 +23,7 @@ namespace Ølspecialisten.Core.Entity
 
         public enum Nationalitet
         {
-            Dansk,
+            dansk,
             Norsk,
             Svensk
         }
