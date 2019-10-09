@@ -12,5 +12,7 @@ namespace Ølspecialisten.Core.DomainServices
         Beer DeleteBeer(int id);
         Beer UpdateBeer(Beer beer);
         List<Beer> GetBeersByType(Beer.TypeBeer type);
+
+        Beer GetBeerById(int id);
     }
 }

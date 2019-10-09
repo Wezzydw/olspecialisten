@@ -22,16 +22,16 @@ namespace UI.RestAPI.Controllers
             }
             // GET api/values
             [HttpGet]
-            public ActionResult<IEnumerable<Beer>> Get()
+            public ActionResult<IEnumerable<Beer>> Get([FromQuery] String filter)
             {
                 return _beerService.GetAllBeers();
             }
 
             // GET api/values/5//andreas syntes den skulle hedde solskin
-            [HttpGet]
-            public ActionResult<string> Solskin([FromQuery] string type)
+            [HttpGet("{id}")]
+            public ActionResult<Beer> Solskin(int id)
             {
-                return "value";
+                return _beerService.GetBeerById(id);
             }
 
             // POST api/values
