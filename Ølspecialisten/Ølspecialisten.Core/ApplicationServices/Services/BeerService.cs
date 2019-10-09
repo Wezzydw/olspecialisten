@@ -40,7 +40,7 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
 
         public List<Beer> GetBeersByType(string type)
         {
-            Beer.TypeBeer t = Beer.TypeBeer.Lys;
+            Beer.TypeBeer t = Beer.TypeBeer.lys;
             foreach (Beer.TypeBeer beertype in Enum.GetValues(typeof(Beer.TypeBeer)))
             {
                 if(beertype.ToString().Equals(type))
