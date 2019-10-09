@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Ølspecialisten.Core.DomainServices;
 using Ølspecialisten.Core.Entity;
 
@@ -20,19 +21,24 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
             return _beerContext.Beers.ToList();
         }
 
-        public void CreateBeer(Beer beer)
+        public Beer CreateBeer(Beer beer)
         {
-            throw new NotImplementedException();
+            _beerContext.Attach(beer).State = EntityState.Added;
+            _beerContext.SaveChanges();
+            return beer;
         }
 
-        public void DeleteBeer(int id)
+        public Beer DeleteBeer(int id)
         {
-            throw new NotImplementedException();
+            var beerRemove = _beerContext.Remove(new Beer() { Id = id }).Entity;
+            return beerRemove;
         }
 
-        public void UpdateBeer(Beer beer)
+        public Beer UpdateBeer(Beer beer)
         {
-            throw new NotImplementedException();
+            _beerContext.Attach(beer).State = EntityState.Modified;
+            _beerContext.SaveChanges();
+            return beer;
         }
 
         public List<Beer> GetBeersByType(Beer.TypeBeer type)
