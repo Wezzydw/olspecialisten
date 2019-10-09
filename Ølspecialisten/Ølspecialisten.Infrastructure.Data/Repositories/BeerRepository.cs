@@ -21,6 +21,25 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
             IEnumerable<Beer> list = _beerContext.Beers;
 
 
+
+            foreach (var VARIABLE in Enum.GetValues(typeof(Beer.Nationalitet)))
+            {
+                if(VARIABLE.ToString().Equals(filter.Land))
+                {
+                    list = list.Where(f => f.Nation.ToString().Equals(filter.Land));
+                }
+            }
+
+            foreach (var VARIABLE in Enum.GetValues(typeof(Beer.TypeBeer)))
+            {
+                if (VARIABLE.ToString().Equals(filter.Type))
+                {
+                    list = list.Where(f => f.TypeOfBeer.ToString().Equals(filter.Type));
+                }
+            }
+
+
+
             /*if (filter.Land >= 0 &&
                 Enum.GetValues(typeof(Beer.Nationalitet)).Length > (int) filter.Land)
             {

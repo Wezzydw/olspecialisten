@@ -6,15 +6,11 @@ namespace Ølspecialisten.Core.Entity
 {
     public class Filter
     {
-        public Beer.TypeBeer Type { get; set; }
-        public Beer.Nationalitet Land { get; set; }
-        public Selector Select { get; set; }
+        public string Type { get; set; }
+        public string Land { get; set; }
+        public string Select { get; set; }
 
-        public enum Selector
-        {
-            Top3,
-            Alle
-        }
+        
 
     }
 }

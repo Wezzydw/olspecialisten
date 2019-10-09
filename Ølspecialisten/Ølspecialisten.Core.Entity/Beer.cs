@@ -24,14 +24,14 @@ namespace Ølspecialisten.Core.Entity
         public enum Nationalitet
         {
             dansk,
-            Norsk,
-            Svensk
+            norsk,
+            svensk
         }
 
         public enum TypeBeer
         {
-            Lys,
-            Mørk
+            lys,
+            mørk
         }
     }
 }
