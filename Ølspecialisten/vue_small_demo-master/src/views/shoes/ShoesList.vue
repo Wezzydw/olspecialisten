@@ -8,7 +8,7 @@
         <form class="w3-container w3-card-4" action="">
             <h2 class="w3-text-black">Input data under</h2>
             <p>Fill the text fields with the correct data</p>
-            <v-btn @click="getBeer">submit</v-btn>
+            <v-btn @click="getBeer">submit id to retreive data</v-btn>
             <p>
                 <label class="w3-text-black"><b>Id</b></label>
                 <v-text-field
