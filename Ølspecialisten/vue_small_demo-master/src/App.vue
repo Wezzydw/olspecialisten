@@ -1,5 +1,44 @@
 <template>
+<div>
+  <header>
+    <div id="logo">
+      <a href="index.html"><img src="img/logo_bottlecap.png" width="70" height="70" alt="logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="all_danske.html">DANSK SPECIALØL</a>
+          <ul>
+            <li>
+              <a href="all_danske.html">Alle Danske Øl</a>
+              <a href="index.html">Top 3 Danske Øl</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="all_norske.html">NORSK SPECIALØL</a>
+          <ul>
+            <li>
+              <a href="all_norske.html">Alle Norske Øl</a>
+              <a href="index.html">Top 3 Norske Øl</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="all__svenske.html">SVENSK SPECIALØL</a>
+          <ul>
+            <li>
+              <a href="all__svenske.html">Alle Svenske Øl</a>
+              <a href="index.html">Top 3 Svenske Øl</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="shopping_cart">
+      <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>
+
   <div id="app">
+
 
     <div id="nav">
 
@@ -14,6 +53,53 @@
 
     </div>
     <router-view/>
+
+    <footer>
+      <div id="footer_container">
+        <div id="footer_top">
+          <h4>ØLSPECIALISTEN</h4>
+          <p>ØlSpecialisten er Nordens top udbyder af bajsebamser fra de nordiske lande og vi stræber efter god kvalitet og formidabel service</p>
+        </div>
+        <div id="footer_bottom">
+          <div class="footer_box">
+            <div id="footer_logo">
+              <a href="index.html"><img src="img/logo_bottlecap.png" width="100" height="100" alt="logo"></a>
+            </div>
+          </div>
+          <div class="footer_box">
+            <h5>Kontakt</h5>
+            <p>Ådalshaven 129</p>
+            <p>6710 Esbjerg V</p>
+            <p>ØlSpecialisten@gmail.com</p>
+          </div>
+          <div class="footer_box">
+            <h5>Åbningstider</h5>
+            <p>Man-Fre 09:00-16:30</p>
+            <p>Lør-Søn 09:00-13:30</p>
+            <p>Helligdage 09:00-11:00</p>
+          </div>
+          <div class="footer_box">
+            <h5>Betalingsmetoder</h5>
+            <p>Visa/Dankort</p>
+            <p>MobilePay</p>
+            <p>Paypal</p>
+          </div>
+          <div class="footer_box">
+            <div id="footer_social">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"> <i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+        <div id="footer_text">
+          <p>2019 ØlSpecialisten, all rights reserved</p>
+          <p>Copyright by group 4</p>
+          <p><a href="#">Admin page</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
   </div>
 </template>
 
