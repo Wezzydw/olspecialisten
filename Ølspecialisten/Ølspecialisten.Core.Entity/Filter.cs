@@ -11,6 +11,8 @@ namespace Ølspecialisten.Core.Entity
         public string Select { get; set; }
         public int Id { get; set; }
 
+        public Boolean top3 { get; set; }
+
         
 
     }

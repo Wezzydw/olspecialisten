@@ -1,30 +1,36 @@
 <template>
     <main>
-        <h3>title</h3>
         <div id="main_container_2">
             <div id="product_container">
-
-                <div id="product_img">
-                    <img src="product.image64" alt="placeholder image">
+                <li v-for="product in productsdk"
+                    v-bind:key="product.id">
+                    <div id="product_img">
+                    <img :src="product.image64" alt="placeholder image" class="responsive">
                 </div>
+                </li>
                 <div id="product_text">
                     <div id="product_title">
-                        <h3>this.product.navn</h3>
-                    </div>
-
-                    <div id="product_description">
                         <li v-for="product in productsdk"
                             v-bind:key="product.id">
-
-                        <p>{{product.id}}</p>
-                        <p>{{product.titel}}</p>
-                        <p>type</p>
-                        <p>lang beskrivelse</p>
-                        <p>Nationalitet</p>
+                        <h3>{{product.navn}}</h3>
                         </li>
                     </div>
+                    <div id="product_description">
+                <li v-for="product in productsdk"
+                    v-bind:key="product.id">
+                        <p>{{product.alkohol}}%</p>
+                        <p>{{product.kapacitet}}cl</p>
+                        <p>{{product.typeOfBeer}}</p>
+                        <p>{{product.beskrivelseLang}}</p>
+                        <p>{{product.nation}}</p>
+                </li>
+                    </div>
+
                     <div id="price_container">
-                        <h3>price</h3>
+                        <li v-for="product in productsdk"
+                            v-bind:key="product.id">
+                        <h3>{{product.pris}}dkk</h3>
+                        </li>
                         <div id="price_button"><a href="#">Tilføj til kurv</a></div>
                     </div>
                 </div>
@@ -43,9 +49,7 @@
             this.fetchProducts()
         },
         data: ()  => ({
-            productsdk: [{productId: 1, description: 'Helo'},{productId: 2, description: 'Bøf'}],
-            productsno: [{productId: 1, description: 'Helo'},{productId: 2, description: 'Bøf'}],
-            productsse: [{productId: 1, description: 'Helo'},{productId: 2, description: 'Bøf'}],
+            productsdk: {productId: 1, description: 'Helo'}
             /*incId: this.$route.params.id*/
         }),
         methods: {
@@ -62,5 +66,8 @@
 </script>
 
 <style scoped>
-
+    .responsive {
+        max-width: 900px;
+        max-height: 600px;
+    }
 </style>

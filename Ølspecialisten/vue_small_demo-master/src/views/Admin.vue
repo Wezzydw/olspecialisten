@@ -3,7 +3,7 @@
     <h1>Admin View</h1>
     <ul>
       <li v-for="product in products"
-          v-bind:key="product.id">{{product.navn}}| {{product.pris}} |{{product.nation}}</li>
+          v-bind:key="product.id">{{product.id}} | {{product.navn}} | {{product.pris}}Dkk | {{product.nation}} | {{product.lager}}stks | {{product.alkohol}}% | {{product.kapacitet}}cl | {{product.typeOfBeer}} | </li>
     </ul>
 
   </div>

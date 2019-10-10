@@ -38,7 +38,7 @@
                         <li v-for="product in productsno"
                             v-bind:key="product.id">
                             <div class="products">
-                                <a href="product_description.html"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
+                                <a href="desc"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
                                 <h3>{{product.navn}}</h3>
                                 <p>Alko%: {{product.alkohol}}%</p>
                                 <p>Kapacitet: {{product.kapacitet}}</p>
@@ -60,7 +60,7 @@
                         <li v-for="product in productsse"
                             v-bind:key="product.id">
                             <div class="products">
-                                <a href="product_description.html"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
+                                <a href="desc"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
                                 <h3>{{product.navn}}</h3>
                                 <p>Alko%: {{product.alkohol}}%</p>
                                 <p>Kapacitet: {{product.kapacitet}}</p>
@@ -96,17 +96,17 @@
         methods: {
             fetchProducts() {
 
-                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=dansk')
+                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=dansk&top3=true')
                     .then((data) => {
                         this.productsdk = data.data;
 
                     });
-                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=norsk')
+                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=norsk&top3=true')
                     .then((data) => {
                         this.productsno = data.data;
 
                     });
-                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=svensk')
+                axios.get('http://beerspecialist.azurewebsites.net/api/beer?land=svensk&top3=true')
                     .then((data) => {
                         this.productsse = data.data;
 

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <div id="nav">
 
       <router-link to="/">Home</router-link> |
@@ -9,7 +10,7 @@
       <router-link to="/shoes">Update</router-link> |
       <router-link to="/Danske">Alle Danske</router-link> |
       <router-link to="/Norske">Alle Norske</router-link> |
-      <router-link to="/Svenske">Alle Svenske</router-link> |
+      <router-link to="/Svenske">Alle Svenske</router-link> |*/
 
     </div>
     <router-view/>
