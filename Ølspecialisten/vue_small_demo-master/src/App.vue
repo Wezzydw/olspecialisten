@@ -7,6 +7,9 @@
       <router-link to="/albums">Delete</router-link> |
       <router-link to="/about">Create</router-link> |
       <router-link to="/shoes">Update</router-link>
+      <router-link to="/Danske">Alle Danske</router-link>
+      <router-link to="/Norske">Alle Norske</router-link>
+      <router-link to="/Svenske">Alle Svenske</router-link>
     </div>
     <router-view/>
   </div>

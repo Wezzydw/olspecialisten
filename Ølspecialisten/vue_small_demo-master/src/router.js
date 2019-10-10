@@ -7,6 +7,9 @@ import AlbumsCreate from "./views/albums/AlbumsCreate";
 import AlbumsUpdate from "./views/albums/AlbumsUpdate";
 import ShoesList from "./views/shoes/ShoesList";
 import Create from "./views/Create";
+import Danske from "./views/Danske";
+import Svenske from "./views/Svenske";
+import Norske from "./views/Norske";
 
 Vue.use(Router)
 
@@ -15,6 +18,19 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/danske',
+      name: 'danske',
+      component: Danske
+    },{
+      path: '/norske',
+      name: 'norske',
+      component: Norske
+    },{
+      path: '/svenske',
+      name: 'svenske',
+      component: Svenske
+    },{
+
       path: '/admin',
       name: 'admin',
       component: Admin
