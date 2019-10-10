@@ -8,6 +8,7 @@
         <form class="w3-container w3-card-4" action="">
             <h2 class="w3-text-black">Input data under</h2>
             <p>Fill the text fields with the correct data</p>
+            <v-btn @click="getBeer">submit</v-btn>
             <p>
                 <label class="w3-text-black"><b>Id</b></label>
                 <v-text-field
@@ -17,6 +18,7 @@
                 ></v-text-field>
 
             <p>
+
                 <label class="w3-text-black"><b>Navn</b></label>
                 <v-text-field
                         v-model="navn"
@@ -24,12 +26,13 @@
                         required
                 ></v-text-field>
             <p>
+
                 <label class="w3-text-black"><b>Pris</b></label>
-                <v-text-field>
-                    v-model="pris"
-                    label="prisen pr. øl"
-                    required
-                    ></v-text-field>
+                <v-text-field
+                        v-model="pris"
+                        label="Pris på øllen"
+                        required
+                ></v-text-field>
             <p>
                 <label class="w3-text-black"><b>Beskrivelse(cl)</b></label>
                 <v-text-field
@@ -126,12 +129,12 @@
             }},
         methods: {
             getBeer() {
-                axios.get('http://beerspecialist.azurewebsites.net/api/beer' + this.id)
+                axios.get('http://beerspecialist.azurewebsites.net/api/beer?id=' + this.id)
                     .then((response) => {
-                        let beer = response.data;
+                        let beer = response.data[0];
                         this.navn = beer.navn;
                         this.beskrivelse = beer.beskrivelse;
-                        this.nation = +beer.nation;
+                        this.nation = beer.nation;
                         this.lager = beer.lager;
                         this.beskrivelseLang = beer.beskrivelseLang;
                         this.alkohol = +beer.alkohol;
@@ -140,10 +143,11 @@
                         this.titel = beer.titel;
                         this.image64 = beer.image64;
                         this.id = beer.id;
+                        this.pris = beer.pris;
                     });
             },
             updateBeer() {
-                axios.put('http://beerspecialist.azurewebsites.net/api/beer' + this.id, {
+                axios.put('http://beerspecialist.azurewebsites.net/api/beer', {
                     navn: this.navn,
                     beskrivelse: this.beskrivelse,
                     nation: this.nation,
@@ -155,6 +159,7 @@
                     titel: this.titel,
                     image64: this.image64,
                     id: this.id,
+                    pris: this.pris
                 } );
             },
             fetchProducts() {
