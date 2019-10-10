@@ -9,6 +9,7 @@ namespace Ølspecialisten.Core.Entity
         public string Type { get; set; }
         public string Land { get; set; }
         public string Select { get; set; }
+        public int Id { get; set; }
 
         
 

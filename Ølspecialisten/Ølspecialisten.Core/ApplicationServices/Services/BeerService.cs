@@ -17,7 +17,10 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
         }
         public List<Beer> GetAllBeers(Filter filter)
         {
-
+            if (filter.Id > 0)
+            {
+                return _beerRepository.GetBeerByIdList(filter.Id);
+            }
 
 
             return _beerRepository.GetAllBeers(filter);

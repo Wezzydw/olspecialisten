@@ -10,6 +10,7 @@ import Create from "./views/Create";
 import Danske from "./views/Danske";
 import Svenske from "./views/Svenske";
 import Norske from "./views/Norske";
+import desc from "./views/product_description";
 
 Vue.use(Router)
 
@@ -18,6 +19,10 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/desc',
+      name: 'desc',
+      component: desc
+    },{
       path: '/danske',
       name: 'danske',
       component: Danske

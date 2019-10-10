@@ -105,5 +105,12 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
         {
            return _beerContext.Beers.FirstOrDefault(i => i.Id == id);
         }
+
+        public List<Beer> GetBeerByIdList(int id)
+        {
+            List<Beer> beer = new List<Beer>();
+            beer.Add(_beerContext.Beers.FirstOrDefault(i => i.Id == id));
+            return beer;
+        }
     }
 }

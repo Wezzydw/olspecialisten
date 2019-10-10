@@ -14,5 +14,6 @@ namespace Ølspecialisten.Core.DomainServices
         List<Beer> GetBeersByType(Beer.TypeBeer type);
 
         Beer GetBeerById(int id);
+        List<Beer> GetBeerByIdList(int id);
     }
 }
