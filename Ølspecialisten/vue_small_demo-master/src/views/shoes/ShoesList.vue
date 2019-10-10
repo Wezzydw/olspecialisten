@@ -160,7 +160,7 @@
             fetchProducts() {
                 axios.get('http://beerspecialist.azurewebsites.net/api/beer')
                     .then((data) => {
-                        this.coffeeCups = data.data})
+                        this.beer = data.data})
             }
         }
     };
