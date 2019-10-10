@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <h1>CREATE NEW CUP TO OUR SHOP</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <body>
