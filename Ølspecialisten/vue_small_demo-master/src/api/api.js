@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: `http://xn--lspecialisten-9mb.azurewebsites.net/api/`,
+    baseURL: `http://beerspecialist.azurewebsites.net/api/beer`,
     headers: {
         'Content-Type': 'application/json',
         // 'Authorization': "JWT " + localStorage.getItem('token')

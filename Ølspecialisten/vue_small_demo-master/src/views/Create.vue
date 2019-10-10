@@ -119,7 +119,7 @@
     methods: {
       Post() {
 
-        axios.post('http://xn--lspecialisten-9mb.azurewebsites.net/api/beer', {
+        axios.post('http://beerspecialist.azurewebsites.net/api/beer', {
           navn: this.navn,
           pris: +this.pris,
           beskrivelse: this.beskrivelse,

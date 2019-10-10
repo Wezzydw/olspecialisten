@@ -1,114 +1,58 @@
 <template>
+    <div>
+        <h1>CREATE NEW CUP TO OUR SHOP</h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <body>
 
-    <v-container>
+        <form class="w3-container w3-card-4" action="">
+            <h2 class="w3-text-black">Input data under</h2>
+            <p>Fill the text fields with the correct data</p>
+            <p>
+                <label class="w3-text-black"><b>id</b></label>
+                <v-text-field
+                        v-model="id"
+                        label="id der skal slettes"
+                        required
+                ></v-text-field>
+            <p>
 
-        <v-row no-gutters>
-            <v-snackbar
-                    v-model="deletedSuccess">
-                {{ deletedText }}
-                <v-btn
-                        color="pink"
-                        text
-                        @click="deletedSuccess = false"
-                >Close</v-btn>
-            </v-snackbar>
-            <v-col
-                    md="6"
-                    offset-md="3">
-                <v-card  class="pa-2"
-                         color="primary"
-                         outlined
-                         tile>
-                    <v-card-title>
-                        <v-row no-gutters>
-                            <v-col
-                                    md="1">
-                                <router-link to="/albums-create" tag="button">
-                                    <v-icon>mdi-plus-circle </v-icon>
-                                </router-link>
-                            </v-col>
-                            <v-col justify="center" md="12">Albums</v-col>
-                        </v-row>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-list>
-                            <v-list-item-group color="primary"
-                                               v-for="album in albums"
-                                               :key="album.navn">
-                                <v-list-item>
-                                    <v-list-item-avatar>
-                                        <v-img v-bind:src="'https://picsum.photos/id/' + album.id + '/40'"></v-img>
-                                    </v-list-item-avatar>
+                <button class="w3-btn w3-blue"  @click="Delete">Register</button></p>
+        </form>
 
-                                    <v-list-item-content>
-                                        <v-list-item-title>{{album.navn}}</v-list-item-title>
-                                    </v-list-item-content>
+        </body>
 
-                                    <v-list-item-action>
-                                        <v-col>
-                                            <v-btn icon>
-                                                <v-icon color="grey lighten-1">mdi-circle-edit-outline</v-icon>
-                                            </v-btn>
-                                            <v-btn v-on:click="deleteAlbum(album)" icon>
-                                                <v-icon color="grey lighten-1">mdi-minus-circle-outline</v-icon>
-                                            </v-btn>
-                                        </v-col>
-
-                                    </v-list-item-action>
-                                </v-list-item>
-                                <v-divider inset></v-divider>
-                            </v-list-item-group>
-                        </v-list>
-                    </v-card-text>
-                    <v-card-actions>
-                        <v-row no-gutters>
-                            <v-col
-                                    md="2"
-                                    offset-md="10">
-
-                            </v-col>
-                        </v-row>
-
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+    </div>
 </template>
-
 <script>
-    import restApi from '../../api/api'
+    import axios from 'axios';
     export default {
-        components: { },
         mounted() {
-            this.fetchAlbums()
+            this.Delete()
         },
         data () {
             return {
-                albums: [],
-                deletedSuccess: false,
-                deletedText: 'Album deleted'
+                beer:[],
+                id: +'',
+                pris: '',
+                beskrivelse: '',
+                nation: '',
+                lager: '',
+                beskrivelseLang: '',
+                alkohol: '',
+                kapacitet: '',
+                typeOfBeer: '',
+                titel: '',
+                image64: '',
+
             }
         },
         methods: {
-            fetchAlbums() {
-                restApi.get('navn')
-                    .then((result) => {
-                        if (this.albums && this.albums.length > 0){
-                            this.albums = this.albums.filter(a => result.data.some(an => an.id === a.id));
-                        } else{
-                            this.albums = result.data
-                        }
-                    })
-            },
-            async deleteAlbum(album) {
-                let result = await restApi.delete('albums/'+album.id)
-                this.deletedSuccess = true;
-                if(result.status !== 200) {
-                    // this.albums.push(album)
-                } else {
-                    this.fetchAlbums()
-                }
+            Delete() {
+
+                axios.delete('http://beerspecialist.azurewebsites.net/api/beer/'+this.id, {
+                    //id: this.id,
+
+                })
 
             }
         }
