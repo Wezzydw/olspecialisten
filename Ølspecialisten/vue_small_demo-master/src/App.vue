@@ -2,35 +2,40 @@
 <div>
   <header>
     <div id="logo">
-      <a href="index.html"><img src="img/logo_bottlecap.png" width="70" height="70" alt="logo"></a>
+      <a href="/"><img src="img/logo_bottlecap.png" width="70" height="70" alt="logo"></a>
     </div>
     <nav>
       <ul>
-        <li><a href="all_danske.html">DANSK SPECIALØL</a>
+        <li><a href="/danske">DANSK SPECIALØL</a>
           <ul>
             <li>
-              <a href="all_danske.html">Alle Danske Øl</a>
-              <a href="index.html">Top 3 Danske Øl</a>
+              <a href="/danske">Alle Danske Øl</a>
+              <a href="/#hex_top">Top 3 Danske Øl</a>
             </li>
           </ul>
         </li>
-        <li><a href="all_norske.html">NORSK SPECIALØL</a>
+        <li><a href="/norske">NORSK SPECIALØL</a>
           <ul>
             <li>
-              <a href="all_norske.html">Alle Norske Øl</a>
-              <a href="index.html">Top 3 Norske Øl</a>
+              <a href="/norske">Alle Norske Øl</a>
+              <a href="/#hex_middle">Top 3 Norske Øl</a>
             </li>
           </ul>
         </li>
-        <li><a href="all__svenske.html">SVENSK SPECIALØL</a>
+        <li><a href="/svenske">SVENSK SPECIALØL</a>
           <ul>
             <li>
-              <a href="all__svenske.html">Alle Svenske Øl</a>
-              <a href="index.html">Top 3 Svenske Øl</a>
+              <a href="/svenske">Alle Svenske Øl</a>
+              <a href="/#hex_bottom">Top 3 Svenske Øl</a>
             </li>
           </ul>
         </li>
+        <a href="/create">Create</a>
+        <a href="/admin">Read</a>
+        <a href="/shoes">Update</a>
+        <a href="/albums">Delete</a>
       </ul>
+
     </nav>
     <div id="shopping_cart">
       <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
@@ -39,19 +44,6 @@
 
   <div id="app">
 
-
-    <div id="nav">
-
-      <router-link to="/">Home</router-link> |
-      <router-link to="/admin">Admin</router-link> |
-      <router-link to="/albums">Delete</router-link> |
-      <router-link to="/about">Create</router-link> |
-      <router-link to="/shoes">Update</router-link> |
-      <router-link to="/Danske">Alle Danske</router-link> |
-      <router-link to="/Norske">Alle Norske</router-link> |
-      <router-link to="/Svenske">Alle Svenske</router-link> |*/
-
-    </div>
     <router-view/>
 
     <footer>

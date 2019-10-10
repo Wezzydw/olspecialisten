@@ -2,39 +2,25 @@
     <main>
         <div id="main_container_2">
             <div id="product_container">
-                <li v-for="product in productsdk"
-                    v-bind:key="product.id">
-                    <div id="product_img">
-                    <img :src="product.image64" alt="placeholder image" class="responsive">
+                <div id="product_img">
+                    <img :src="url" alt="placeholder image" class="responsive">
                 </div>
-                </li>
                 <div id="product_text">
                     <div id="product_title">
-                        <li v-for="product in productsdk"
-                            v-bind:key="product.id">
-                        <h3>{{product.navn}}</h3>
-                        </li>
+                        <h3>{{navn}}</h3>
                     </div>
                     <div id="product_description">
-                <li v-for="product in productsdk"
-                    v-bind:key="product.id">
-                        <p>{{product.alkohol}}%</p>
-                        <p>{{product.kapacitet}}cl</p>
-                        <p>{{product.typeOfBeer}}</p>
-                        <p>{{product.beskrivelseLang}}</p>
-                        <p>{{product.nation}}</p>
-                </li>
+                        <p>alkohol: {{alkohol}}%</p>
+                        <p>Indhold: {{indhold}}cl</p>
+                        <p>{{type}} øl</p>
+                        <p>{{beskrivelseLang}}</p>
+                        <p>{{nation}} øl</p>
                     </div>
-
                     <div id="price_container">
-                        <li v-for="product in productsdk"
-                            v-bind:key="product.id">
-                        <h3>{{product.pris}}dkk</h3>
-                        </li>
+                        <h3>{{pris}}dkk</h3>
                         <div id="price_button"><a href="#">Tilføj til kurv</a></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
@@ -48,16 +34,34 @@
         mounted() {
             this.fetchProducts()
         },
-        data: ()  => ({
-            productsdk: {productId: 1, description: 'Helo'}
-            /*incId: this.$route.params.id*/
-        }),
+        data()  {
+            return {
+                productsdk: {},
+                incId: this.$route.params.id,
+                alkohol: 0,
+                navn: 'adwa',
+                url: '',
+                indhold: '',
+                type: '',
+                beskrivelseLang: '',
+                nation: '',
+                pris: '',
+
+        };},
         methods: {
             fetchProducts() {
 
-                axios.get('http://beerspecialist.azurewebsites.net/api/beer?id=1')
+                axios.get('http://beerspecialist.azurewebsites.net/api/beer?id=' + this.$route.params.id)
                     .then((data) => {
-                        this.productsdk = data.data;
+                        this.productsdk = data.data[0];
+                        this.alkohol = this.productsdk.alkohol;
+                        this.url = this.productsdk.image64;
+                        this.indhold = this.productsdk.kapacitet;
+                        this.type = this.productsdk.typeOfBeer;
+                        this.beskrivelseLang = this.productsdk.beskrivelseLang;
+                        this.nation = this.productsdk.nation;
+                        this.pris = this.productsdk.pris;
+                        this.navn = this.productsdk.navn;
 
                     });
             }
@@ -67,7 +71,7 @@
 
 <style scoped>
     .responsive {
-        max-width: 900px;
+        max-width: 600px;
         max-height: 600px;
     }
 </style>

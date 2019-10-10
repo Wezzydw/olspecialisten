@@ -7,10 +7,10 @@
             <div id="all_container">
                 <li v-for="product in productsse"
                     v-bind:key="product.id">
-                    <div class="all_beers">
+                    <div class="all_beers" @click="$router.push({name: 'desc', params:{id: product.id},})" >
 
 
-                        <a href="product_description.html"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
+                        <a><img :src="product.image64" alt="placeholder image" class="responsive"></a>
                         <h3>{{product.navn}}</h3>
                         <p>{{product.alkohol}}</p>
                         <p>{{product.kapacitet}}</p>

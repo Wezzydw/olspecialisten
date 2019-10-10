@@ -15,8 +15,8 @@
                         </div>
                         <li v-for="product in productsdk"
                             v-bind:key="product.id">
-                        <div class="products" @click="$router.push({name: 'desc', params: {id: product.id},})" >
-                            <a href="desc"><img :src="product.image64" alt="placeholder image" class="responsive" ></a>
+                        <div class="products" @click="$router.push({name: 'desc', params:{id: product.id},})" >
+                            <a><img :src="product.image64" alt="placeholder image" class="responsive" ></a>
                             <h3>{{product.navn}}</h3>
                             <p>Alko%: {{product.alkohol}}%</p>
                             <p>Kapacitet: {{product.kapacitet}}</p>
@@ -37,8 +37,8 @@
                         </div>
                         <li v-for="product in productsno"
                             v-bind:key="product.id">
-                            <div class="products">
-                                <a href="desc"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
+                            <div class="products" @click="$router.push({name: 'desc', params:{id: product.id},})" >
+                                <a><img :src="product.image64" alt="placeholder image" class="responsive" ></a>
                                 <h3>{{product.navn}}</h3>
                                 <p>Alko%: {{product.alkohol}}%</p>
                                 <p>Kapacitet: {{product.kapacitet}}</p>
@@ -59,8 +59,8 @@
                         </div>
                         <li v-for="product in productsse"
                             v-bind:key="product.id">
-                            <div class="products">
-                                <a href="desc"><img :src="product.image64" alt="placeholder image" class="responsive"></a>
+                            <div class="products" @click="$router.push({name: 'desc', params:{id: product.id},})" >
+                                <a><img :src="product.image64" alt="placeholder image" class="responsive" ></a>
                                 <h3>{{product.navn}}</h3>
                                 <p>Alko%: {{product.alkohol}}%</p>
                                 <p>Kapacitet: {{product.kapacitet}}</p>
