@@ -2,12 +2,12 @@
     <main>
         <div id="main_container_5">
             <div id="all_title">
-                <h2>Alle danske øl</h2>
+                <h2>Alle Danske øl</h2>
             </div>
             <div id="all_container">
-                <div v-for="product in products" v-bind:key="product.id" class="all_beers">
+                <div class="all_beers">
                     <a href="product_description.html"><img src="https://via.placeholder.com/200" alt="placeholder image"></a>
-                    <h3>{{product.navn}}</h3>
+                    <h3>title</h3>
                     <p>Alkohol</p>
                     <p>indhold</p>
                     <p>type</p>
