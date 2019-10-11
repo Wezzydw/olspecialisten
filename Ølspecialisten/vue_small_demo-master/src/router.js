@@ -11,6 +11,8 @@ import Danske from "./views/Danske";
 import Svenske from "./views/Svenske";
 import Norske from "./views/Norske";
 import desc from "./views/product_description";
+import Basket from "./views/Basket";
+import order_page from "./views/order_page";
 
 Vue.use(Router)
 
@@ -19,6 +21,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+        path: '/order_page',
+        name: 'order_page',
+        component: order_page
+    },{
+        path: '/basket',
+        name: 'basket',
+        component: Basket
+    },{
       path: '/desc/:id',
       name: 'desc',
       component: desc

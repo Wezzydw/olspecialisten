@@ -1,11 +1,16 @@
 <template>
 <div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Karma&display=swap" rel="stylesheet">
+
   <header>
-    <div id="logo">
-      <a href="/"><img src="img/logo_bottlecap.png" width="70" height="70" alt="logo"></a>
-    </div>
+
     <nav>
       <ul>
+          <div id="logo">
+              <a href="/"><img src="https://res.cloudinary.com/ddiwfa6cc/image/upload/v1570777694/logo_bottlecap_dsevmg.png" width="70" height="70" alt="logo"></a>
+          </div>
         <li><a href="/danske">DANSK SPECIALØL</a>
           <ul>
             <li>
@@ -38,7 +43,7 @@
 
     </nav>
     <div id="shopping_cart">
-      <a href="basket.html"><i class="fas fa-shopping-cart"></i></a>
+      <a href="/basket"><i class="fas fa-shopping-cart"></i></a>
     </div>
   </header>
 

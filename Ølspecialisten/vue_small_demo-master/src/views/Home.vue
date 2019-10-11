@@ -22,7 +22,7 @@
                             <p>Kapacitet: {{product.kapacitet}}</p>
                             <p>Type: {{product.typeOfBeer}}</p>
                             <p>PRIS: {{product.pris}}dkk</p>
-                            <p>{{product.beskrivelse}}dkk</p>
+
                             <div id="product_link">
                                 <a href="#">Tilføj til kurv</a>
                             </div>
@@ -44,7 +44,7 @@
                                 <p>Kapacitet: {{product.kapacitet}}</p>
                                 <p>Type: {{product.typeOfBeer}}</p>
                                 <p>PRIS: {{product.pris}}dkk</p>
-                                <p>{{product.beskrivelse}}dkk</p>
+
                                 <div id="product_link">
                                     <a href="#">Tilføj til kurv</a>
                                 </div>
@@ -66,7 +66,7 @@
                                 <p>Kapacitet: {{product.kapacitet}}</p>
                                 <p>Type: {{product.typeOfBeer}}</p>
                                 <p>PRIS: {{product.pris}}dkk</p>
-                                <p>{{product.beskrivelse}}dkk</p>
+
                                 <div id="product_link">
                                     <a href="#">Tilføj til kurv</a>
                                 </div>
