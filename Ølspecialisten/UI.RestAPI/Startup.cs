@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Converters;
 using Ølspecialisten.Core.ApplicationServices;
 using Ølspecialisten.Core.ApplicationServices.Services;
@@ -38,10 +40,30 @@ namespace UI.RestAPI
 
             services.AddCors();
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                byte[] a = new byte[10];
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(a),
+                    ValidateLifetime =  true,
+                    ClockSkew = TimeSpan.FromMinutes(5)
+                };
+            });
+                
+
+            
+
             if (env.IsDevelopment())
             {
                 // In-memory database:
+
                 services.AddDbContext<BeerContext>(opt => opt.UseSqlite("Data Source=Beers.db"));
+
             }
             else
             {
@@ -50,6 +72,7 @@ namespace UI.RestAPI
                 //  opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
 
                 services.AddDbContext<BeerContext>(opt => opt.UseSqlite("Data Source=Beers.db"));
+
             }
 
             services.AddScoped<IBeerRepository, BeerRepository>();
@@ -88,7 +111,7 @@ namespace UI.RestAPI
                 app.UseHsts();
             }
 
-            
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();

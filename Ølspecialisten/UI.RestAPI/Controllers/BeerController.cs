@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ølspecialisten.Core.ApplicationServices;
 using Ølspecialisten.Core.Entity;
@@ -28,6 +29,7 @@ namespace UI.RestAPI.Controllers
             }
 
             // GET api/values/5//andreas syntes den skulle hedde solskin
+            [Authorize]
             [HttpGet("{id}")]
             public ActionResult<Beer> Solskin(int id)
             {

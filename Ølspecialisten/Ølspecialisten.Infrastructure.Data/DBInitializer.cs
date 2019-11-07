@@ -141,7 +141,30 @@ namespace Ølspecialisten.Infrastructure.Data
                 context.Beers.AddRange(items);
             }
 
-            context.SaveChanges();
+            if (context.Users.ToList().Count == 0)
+            {
+                List<User> itemsU = new List<User>();
+                itemsU.Add(new User()
+                {
+                    Id = 1,
+                    UserName = "admin",
+                    IsAdmin = true,
+                    Password = "1234"
+
+                });
+
+                itemsU.Add(new User()
+                {
+                    Id = 2,
+                    UserName = "adminNot",
+                    IsAdmin = false,
+                    Password = "1234"
+
+                });
+                context.Users.AddRange(itemsU);
+            }
+
+                context.SaveChanges();
         }
     }
 }
