@@ -14,7 +14,7 @@ namespace Ølspecialisten.Core.Entity
         public string Navn { get; set; }
         public string BeskrivelseLang { get; set; }
         public double Alkohol { get; set; }
-        public double Kapacitet { get; set; }
+        public double Kapacitet { get; set; } 
         public TypeBeer TypeOfBeer { get; set; }
         public string Titel { get; set; }
         public string Image64 { get; set; }

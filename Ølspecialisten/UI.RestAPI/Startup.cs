@@ -41,13 +41,15 @@ namespace UI.RestAPI
             if (env.IsDevelopment())
             {
                 // In-memory database:
-                services.AddDbContext<BeerContext>(opt => opt.UseInMemoryDatabase("Beershop"));
+                services.AddDbContext<BeerContext>(opt => opt.UseSqlite("Data Source=Beers.db"));
             }
             else
             {
                 // Azure SQL database:
-                services.AddDbContext<BeerContext>(opt =>
-                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+                //services.AddDbContext<BeerContext>(opt =>
+                //  opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+
+                services.AddDbContext<BeerContext>(opt => opt.UseSqlite("Data Source=Beers.db"));
             }
 
             services.AddScoped<IBeerRepository, BeerRepository>();
@@ -70,6 +72,8 @@ namespace UI.RestAPI
                 // Initialize the database
                 var services = scope.ServiceProvider;
                 var dbContext = services.GetService<BeerContext>();
+                dbContext.Database.EnsureDeleted();
+                dbContext.Database.EnsureCreated();
                 var dbInitializer = services.GetService<IDBInitializer>();
                 dbInitializer.Initialize(dbContext);
             }
