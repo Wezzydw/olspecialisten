@@ -21,16 +21,31 @@ namespace UI.RestAPI.Controllers
             _userService = userService;
         }
 
+        [HttpGet]
+        public ActionResult<String> Get()
+        {
+            String a = "test";
+            return a;
+        }
+
         [HttpPost]
-        public ActionResult Solskin([FromBody] LoginForm loginForm)
+        public ActionResult Login([FromBody]LoginForm loginForm)
         {
             var username = loginForm.UserName;
             var token = _userService.genereateToken(loginForm);
-            return Ok(new
+            if (username != null)
             {
-                username,
-                token
-            });
+                return Ok(new
+                {
+                    username,
+                    token
+                });
+            }
+            else
+            {
+                return Unauthorized();
+            }
+           
 
 
         }

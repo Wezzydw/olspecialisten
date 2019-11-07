@@ -77,6 +77,8 @@ namespace UI.RestAPI
 
             services.AddScoped<IBeerRepository, BeerRepository>();
             services.AddScoped<IBeerService, BeerService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddTransient<IDBInitializer, DBInitializer>();
             services.AddMvc().AddJsonOptions(options => {
                 options.SerializerSettings.Converters.Add(new StringEnumConverter());

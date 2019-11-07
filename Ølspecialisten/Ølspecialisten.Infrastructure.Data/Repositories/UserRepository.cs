@@ -7,7 +7,7 @@ using Ølspecialisten.Core.Entity;
 
 namespace Ølspecialisten.Infrastructure.Data.Repositories
 {
-    class UserRepository :IUserRepository
+    public class UserRepository :IUserRepository
     {
         private BeerContext _beerContext;
         public UserRepository(BeerContext context)

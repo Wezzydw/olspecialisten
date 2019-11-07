@@ -11,7 +11,7 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
 {
     public class UserService : IUserService
     {
-        private byte[] bytes; 
+        
         private IUserRepository _userRepository;
 
         public UserService(IUserRepository userRepository)
@@ -22,6 +22,11 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
 
         public String genereateToken(LoginForm loginForm)
         {
+             byte[] bytes = new byte[40];
+            Random rand = new Random();
+            rand.NextBytes(bytes);
+
+
             User user = _userRepository.IsValid(loginForm);
 
             if (user != null)
