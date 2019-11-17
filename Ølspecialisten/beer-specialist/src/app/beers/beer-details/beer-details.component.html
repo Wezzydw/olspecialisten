@@ -1,0 +1,11 @@
+<button routerLink="/beers">Back</button>
+
+<h1>Beer details</h1>
+<div *ngIf="beer">
+
+  <h2>{{beer.id}}</h2>
+  <h3>{{beer.navn}}</h3>
+</div>
+<div *ngIf="!beer">
+  <h2>Beer not found!</h2>
+</div>
