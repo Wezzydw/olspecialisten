@@ -22,9 +22,52 @@ namespace Ølspecialisten.Core.ApplicationServices.Services
 
         public String genereateToken(LoginForm loginForm)
         {
-             byte[] bytes = new byte[40];
-            Random rand = new Random();
-            rand.NextBytes(bytes);
+            byte[] bytes = new byte[40]
+            {
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+                0x20,
+            };
+            //Random rand = new Random();
+            //rand.NextBytes(bytes);
+            
 
 
             User user = _userRepository.IsValid(loginForm);

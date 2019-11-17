@@ -1,0 +1,18 @@
+<button (click)="logout()">Logout</button>
+
+
+<h1>Please Login</h1>
+
+<button routerLink="/beers">Back</button>
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <label>
+        Name:
+        <input type="text" formControlName="name">
+    </label>
+    <label>
+        Password:
+        <input type="text" formControlName="password">
+    </label>
+
+    <button type="submit">Save</button>
+</form>
