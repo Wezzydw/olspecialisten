@@ -42,7 +42,49 @@ namespace UI.RestAPI
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
-                byte[] a = new byte[10];
+                byte[] a = new byte[40]
+                {
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                    0x20,
+                };
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     

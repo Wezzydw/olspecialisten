@@ -36,21 +36,24 @@ namespace UI.RestAPI.Controllers
                 return _beerService.GetBeerById(id);
             }
 
-            // POST api/values
-            [HttpPost]
+        // POST api/values
+        [Authorize]
+        [HttpPost]
             public void Post([FromBody] Beer beer)
             {
                 _beerService.CreateBeer(beer);
             }
 
-            // PUT api/values/5
-            [HttpPut]
+        // PUT api/values/5
+        [Authorize]
+        [HttpPut]
             public void Put([FromBody] Beer beer)
             {
                 _beerService.UpdateBeer(beer);
             }
 
-            // DELETE api/values/5
+        // DELETE api/values/5
+            [Authorize(Roles = "Administrator")]
             [HttpDelete("{id}")]
             public void Delete(int id)
             {
