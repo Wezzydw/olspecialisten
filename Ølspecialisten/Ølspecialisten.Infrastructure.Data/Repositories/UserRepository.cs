@@ -34,11 +34,23 @@ namespace Ølspecialisten.Infrastructure.Data.Repositories
         public User IsValid(LoginForm loginForm)
         {
             User a = _beerContext.Users.FirstOrDefault(b => b.UserName == loginForm.UserName);
-            if (a != null && a.Password == loginForm.Password)
+            if (a == null)
             {
-                return a;
+                return null;
             }
-            return null;
+
+            using (var hmac = new System.Security.Cryptography.HMACSHA512(a.PasswordSalt))
+            {
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(loginForm.Password));
+                for (int i = 0; i < computedHash.Length; i++)
+                {
+                    if (computedHash[i] != a.PasswordHash[i])
+                    {
+                        return null;
+                    }
+                }
+            }
+            return a;
         }
     }
 }

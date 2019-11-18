@@ -53,7 +53,7 @@ namespace UI.RestAPI.Controllers
             }
 
         // DELETE api/values/5
-            [Authorize(Roles = "Administrator")]
+            [Authorize(Roles = "Admin")]
             [HttpDelete("{id}")]
             public void Delete(int id)
             {

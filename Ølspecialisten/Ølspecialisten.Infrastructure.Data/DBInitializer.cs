@@ -143,13 +143,20 @@ namespace Ølspecialisten.Infrastructure.Data
 
             if (context.Users.ToList().Count == 0)
             {
+                string password = "1234";
+                byte[] passwordHashAdmin, passwordSaltAdmin, passwordHashAdminNot, passwordSaltAdminNot;
+
+                CreatePasswordHash(password, out passwordHashAdmin, out passwordSaltAdmin);
+                CreatePasswordHash(password, out passwordHashAdminNot, out passwordSaltAdminNot);
+
                 List<User> itemsU = new List<User>();
                 itemsU.Add(new User()
                 {
                     Id = 1,
                     UserName = "admin",
                     IsAdmin = true,
-                    Password = "1234"
+                    PasswordHash = passwordHashAdmin,
+                    PasswordSalt = passwordSaltAdmin
 
                 });
 
@@ -158,13 +165,23 @@ namespace Ølspecialisten.Infrastructure.Data
                     Id = 2,
                     UserName = "adminNot",
                     IsAdmin = false,
-                    Password = "1234"
-
+                    PasswordHash = passwordHashAdminNot,
+                    PasswordSalt = passwordSaltAdminNot
                 });
                 context.Users.AddRange(itemsU);
             }
 
                 context.SaveChanges();
+        }
+
+
+        private static void CreatePasswordHash(String password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
         }
     }
 }
