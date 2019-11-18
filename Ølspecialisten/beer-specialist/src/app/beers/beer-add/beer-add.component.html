@@ -1,0 +1,13 @@
+<button routerLink="/beers">Back</button>
+<form [formGroup]="beerForm" (ngSubmit)="save()">
+  <label>
+    ID:
+    <input type="number" formControlName="id">
+  </label>
+  <label>
+    Navn:
+    <input type="text" formControlName="navn">
+  </label>
+
+  <button type="submit">Save</button>
+</form>
